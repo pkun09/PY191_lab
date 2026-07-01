@@ -25,7 +25,7 @@ def draw(screen):
     #
     # ---------------- TODO ----------------
 
-    display = "|" + text"
+    display = text[0:cursor] + "|" + text[cursor:]
 
     # ----------------------------------------
 
@@ -75,7 +75,7 @@ def main(screen):
 
             if cursor > 0:
                 cursor -= 1
- 
+
             display = text[0:cursor] + "|" + text[cursor:]
 
         # ----------------------------------------
@@ -187,10 +187,10 @@ def main(screen):
         # ---------------- ANSWER ----------------
 
         elif 32 <= key <= 126:
+            text = text[0:cursor] + chr(key) + text[cursor:]
+            cursor += 1
 
-            ...
-
-            display = ...
+            display = text[0:cursor] + "|" + text[cursor:]
 
         # ----------------------------------------
 
